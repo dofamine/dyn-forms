@@ -1,6 +1,6 @@
 import { BaseControl } from './base-control';
 
-export class NumberControl extends BaseControl {
+export class NumberControl extends BaseControl<any> {
   type = 'number';
 
   constructor(options = {}) {
