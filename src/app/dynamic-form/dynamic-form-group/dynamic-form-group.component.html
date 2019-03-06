@@ -1,4 +1,6 @@
-<div [formGroup]="form">
-    <app-dynamic-form-control *ngFor="let control of group" [control]="control" [group]="formGroup"></app-dynamic-form-control>
+<div [formGroup]="group" class="group">
+  <app-dynamic-form-control *ngFor="let control of controlKeys; let i = index"
+                            [control]="controls[control]"
+                            [controlModel]="groupModel[i]">
+  </app-dynamic-form-control>
 </div>
-

@@ -1,0 +1,10 @@
+<ng-container [ngSwitch]="controlModel.type">
+  <app-autocomplete *ngSwitchCase="autocomplete" [control]="control" [model]="controlModel"></app-autocomplete>
+  <app-checkbox *ngSwitchCase="checkbox" [control]="control" [model]="controlModel"></app-checkbox>
+  <app-date *ngSwitchCase="date" [control]="control" [model]="controlModel"></app-date>
+  <app-number *ngSwitchCase="number" [control]="control" [model]="controlModel"></app-number>
+  <app-select *ngSwitchCase="select" [model]="controlModel" [control]="control"></app-select>
+  <app-text *ngSwitchCase="text" [control]="control" [model]="controlModel"></app-text>
+  <app-radio *ngSwitchCase="radio" [control]="control" [model]="controlModel"></app-radio>
+</ng-container>
+

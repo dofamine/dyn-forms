@@ -1,28 +1,46 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { BaseControl } from '../base-control';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AbstractControl, FormGroup } from '@angular/forms';
+
+import { Models, FormModel } from '../models';
 import { FormService } from './form.service';
 
 @Component({
   selector: 'app-dynamic-form',
   templateUrl: './dynamic-form.component.html',
-  styleUrls: ['./dynamic-form.component.scss']
+  styleUrls: ['./dynamic-form.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DynamicFormComponent implements OnInit {
-  @Input() controls: BaseControl<any>[] = [];
-  form: FormGroup = new FormGroup({});
-  groups: any;
-  groupKeys: any;
-  payLoad = '';
+  @Input() controls: Models[] = [];
+  @Input() change: OnChangeHandlerFn;
+  @Output() submitEmitter: EventEmitter<string> = new EventEmitter<string>();
+  form: FormGroup;
+  model: FormModel;
 
-  constructor(private service: FormService) {  }
+  constructor(private readonly formService: FormService) {
+  }
+
+  get groups(): { [key: string]: AbstractControl } {
+    return this.form.controls;
+  }
+
+  get groupKeys(): string[] {
+    return Object.keys(this.groups);
+  }
 
   ngOnInit() {
-    this.groups = this.service.getForm(this.controls);
-    console.log(this.groupKeys = Object.keys(this.groups));
+    this.initForm();
+    this.model = this.formService.getFormAsObjectModel(this.controls);
   }
 
   onSubmit() {
-    this.payLoad = JSON.stringify(this.form.value);
+    this.submitEmitter.emit(JSON.stringify(this.form.value));
+  }
+
+  initForm() {
+    this.form = this.formService.getForm(this.controls);
+    this.form.valueChanges.subscribe(this.change);
   }
 }
+
+type OnChangeHandlerFn = (form: FormGroup) => any;

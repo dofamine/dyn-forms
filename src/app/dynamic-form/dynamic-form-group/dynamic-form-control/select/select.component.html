@@ -1,0 +1,11 @@
+<mat-form-field>
+  <select matNativeControl
+          [formControl]="control"
+          [placeholder]="model.title"
+          name="car">
+    <option value="" selected></option>
+    <option *ngFor="let option of model.options" [value]="option.key">
+      {{option.value}}
+    </option>
+  </select>
+</mat-form-field>

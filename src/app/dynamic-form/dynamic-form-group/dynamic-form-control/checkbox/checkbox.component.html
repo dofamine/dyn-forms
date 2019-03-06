@@ -1,0 +1,5 @@
+<div class="checkbox" [formGroup]="control">
+  <mat-checkbox
+    [formControl]="getControl(option.value)"
+    *ngFor="let option of model.options">{{option.value}}</mat-checkbox>
+</div>
