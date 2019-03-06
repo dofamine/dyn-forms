@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
-import { Models } from '../../../../models';
+import { FormFieldJSON } from '../../../../models';
 
 @Component({
   selector: 'app-select',
@@ -10,7 +10,7 @@ import { Models } from '../../../../models';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SelectComponent {
-  @Input() model: Models;
+  @Input() model: FormFieldJSON;
   @Input() control: FormControl;
 
   constructor() {

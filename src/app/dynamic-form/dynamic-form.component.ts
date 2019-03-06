@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AbstractControl, FormGroup } from '@angular/forms';
 
-import { Models, FormModel } from '../models';
+import { FormFieldJSON, FormModel } from '../models';
 import { FormService } from './form.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { FormService } from './form.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DynamicFormComponent implements OnInit {
-  @Input() controls: Models[] = [];
+  @Input() controls: FormFieldJSON[] = [];
   @Input() change: OnChangeHandlerFn;
   @Output() submitEmitter: EventEmitter<string> = new EventEmitter<string>();
   form: FormGroup;

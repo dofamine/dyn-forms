@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
-import { Models } from '../../../../models';
+import { FormFieldJSON } from '../../../../models';
 
 @Component({
   selector: 'app-text',
@@ -9,7 +9,7 @@ import { Models } from '../../../../models';
   styleUrls: ['./text.component.scss']
 })
 export class TextComponent {
-  @Input() model: Models;
+  @Input() model: FormFieldJSON;
   @Input() control: FormControl;
 
   constructor() {

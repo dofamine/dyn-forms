@@ -3,7 +3,7 @@ export interface Option {
   value: string | number;
 }
 
-export interface Models {
+export interface FormFieldJSON {
   type: string;
   id: string;
   seqNo: number;
@@ -14,5 +14,5 @@ export interface Models {
 }
 
 export interface FormModel {
-  [key: string]: Models[];
+  [key: string]: FormFieldJSON[];
 }

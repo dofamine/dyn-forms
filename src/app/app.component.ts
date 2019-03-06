@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { DataService } from './data.service';
 import { Observable } from 'rxjs';
-import { Models } from './models';
+import { FormFieldJSON } from './models';
 import { FormGroup } from '@angular/forms';
 
 @Component({
@@ -11,7 +11,7 @@ import { FormGroup } from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
-  controls: Observable<Models[]>;
+  controls: Observable<FormFieldJSON[]>;
   payload: string;
 
   constructor(private readonly dataService: DataService) {

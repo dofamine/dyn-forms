@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Models, FormModel, Option } from '../models';
-import { FieldTypes } from '../app-config';
+import { FormFieldJSON, FormModel } from '../models';
 
 
 @Injectable()
@@ -15,7 +14,7 @@ export class FormService {
     }
   }
 
-  getForm(controls: Models[]): FormGroup {
+  getForm(controls: FormFieldJSON[]): FormGroup {
     const groups: any = this.getFormAsObjectModel(controls);
 
     for (const key in groups) {
@@ -27,7 +26,7 @@ export class FormService {
     return new FormGroup(groups);
   }
 
-  getFormAsObjectModel(controls: Models[]): FormModel {
+  getFormAsObjectModel(controls: FormFieldJSON[]): FormModel {
     const groups: any = {};
 
     controls.forEach((control) => {
@@ -41,24 +40,12 @@ export class FormService {
     return groups;
   }
 
-  toFormGroup(controls: Models[]): FormGroup {
+  toFormGroup(controls: FormFieldJSON[]): FormGroup {
     const group: any = {};
 
     controls.forEach(control => {
-      if (control.type === FieldTypes.radio || control.type === FieldTypes.checkbox) {
-        group[control.id] = this.optionsToGroup(control.options);
-      } else {
-        group[control.id] = new FormControl(control.value || '');
-      }
+      group[control.id] = new FormControl(control.value || '');
     });
-
-    return new FormGroup(group);
-  }
-
-  optionsToGroup(options: Option[]) {
-    const group: any = {};
-
-    options.forEach(option => group[option.value] = new FormControl(option.value));
 
     return new FormGroup(group);
   }

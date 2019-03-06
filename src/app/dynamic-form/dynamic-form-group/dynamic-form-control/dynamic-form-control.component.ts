@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { AbstractControl, FormControl } from '@angular/forms';
-import { Models } from '../../../models';
+import { AbstractControl } from '@angular/forms';
+import { FormFieldJSON } from '../../../models';
 import { FieldTypes } from '../../../app-config';
 
 @Component({
@@ -11,7 +11,7 @@ import { FieldTypes } from '../../../app-config';
 })
 export class DynamicFormControlComponent implements OnInit {
   @Input() control: AbstractControl;
-  @Input() controlModel: Models;
+  @Input() controlModel: FormFieldJSON;
 
   get autocomplete(): string {
     return FieldTypes.autocomplete;

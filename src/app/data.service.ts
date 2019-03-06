@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Models } from './models';
+import { FormFieldJSON } from './models';
 
 export const formData = [
   {
@@ -129,21 +129,27 @@ export const formData = [
         value: '3',
       },
     ],
-  }, {
-    title: 'check box',
+  },
+  {
+    title: 'check box3',
     id: 'hgjnmfumhj',
+    groupName: 'group1',
+    seqNo: 8,
+    type: 'checkbox',
+  },
+  {
+    title: 'check box2',
+    id: 'dsdsads',
+    groupName: 'group5',
+    seqNo: 65,
+    type: 'checkbox',
+  },
+  {
+    title: 'check box1',
+    id: 'dsafsad',
     groupName: 'group5',
     seqNo: 635,
     type: 'checkbox',
-    options: [
-      {
-        value: '1',
-      }, {
-        value: '2',
-      }, {
-        value: '3',
-      },
-    ]
   }, {
     title: 'some select',
     id: 'mjhkhgyghjnfuy',
@@ -178,12 +184,12 @@ export const formData = [
   providedIn: 'root'
 })
 export class DataService {
-  private readonly data$: BehaviorSubject<Models[]> = new BehaviorSubject<Models[]>(formData);
+  private readonly data$: BehaviorSubject<FormFieldJSON[]> = new BehaviorSubject<FormFieldJSON[]>(formData);
 
   constructor() {
   }
 
-  public get data(): Observable<Models[]> {
+  public get data(): Observable<FormFieldJSON[]> {
     return this.data$.asObservable();
   }
 }

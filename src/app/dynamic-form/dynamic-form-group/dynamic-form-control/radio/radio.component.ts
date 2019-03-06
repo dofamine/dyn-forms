@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Models } from '../../../../models';
 import { FormGroup } from '@angular/forms';
+
+import { FormFieldJSON } from '../../../../models';
 
 @Component({
   selector: 'app-radio',
@@ -9,12 +10,9 @@ import { FormGroup } from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RadioComponent {
-  @Input() model: Models;
+  @Input() model: FormFieldJSON;
   @Input() control: FormGroup;
 
   constructor() { }
 
-  getControl(name) {
-    return this.control.controls[name];
-  }
 }

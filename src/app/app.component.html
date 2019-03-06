@@ -1,4 +1,7 @@
-<app-dynamic-form [controls]="controls | async" [change]="onChange.bind(this)" (submitEmitter)="onSubmit($event)"></app-dynamic-form>
+<app-dynamic-form [controls]="controls | async"
+                  [change]="onChange.bind(this)"
+                  (submitEmitter)="onSubmit($event)">
+</app-dynamic-form>
 <div *ngIf="payload" class="form-row">
   <strong>Saved the following values:</strong><br>
   <p style="font-size: 20px;">{{payload}}</p>

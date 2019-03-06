@@ -23,53 +23,41 @@ import {
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormService } from './form.service';
 
+const MODULES = [
+  CommonModule,
+  BrowserModule,
+  FormsModule,
+  ReactiveFormsModule,
+  MatAutocompleteModule,
+  MatFormFieldModule,
+  MatInputModule,
+  BrowserAnimationsModule,
+  MatCheckboxModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatIconModule,
+  MatRadioModule,
+  MatSelectModule
+];
+
+const COMPONENTS = [
+  DynamicFormComponent,
+  DynamicFormControlComponent,
+  AutocompleteComponent,
+  CheckboxComponent,
+  TextComponent,
+  RadioComponent,
+  SelectComponent,
+  DateComponent,
+  NumberComponent,
+  DynamicFormGroupComponent,
+];
+
 @NgModule({
-  declarations: [
-    DynamicFormComponent,
-    DynamicFormControlComponent,
-    AutocompleteComponent,
-    CheckboxComponent,
-    TextComponent,
-    RadioComponent,
-    SelectComponent,
-    DateComponent,
-    NumberComponent,
-    DynamicFormGroupComponent,
-  ],
-  imports: [
-    CommonModule,
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatAutocompleteModule,
-    MatFormFieldModule,
-    MatInputModule,
-    BrowserAnimationsModule,
-    MatCheckboxModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatIconModule,
-    MatRadioModule,
-    MatSelectModule
-  ],
-  exports: [
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatAutocompleteModule,
-    MatFormFieldModule,
-    MatInputModule,
-    BrowserAnimationsModule,
-    MatCheckboxModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatIconModule,
-    MatRadioModule,
-    MatSelectModule,
-    DynamicFormComponent,
-  ],
-  providers: [
-    FormService
-  ]
+  declarations: COMPONENTS,
+  imports: MODULES,
+  exports: [...COMPONENTS, ...MODULES],
+  providers: [ FormService ]
 })
-export class DynamicFormModule { }
+export class DynamicFormModule {
+}

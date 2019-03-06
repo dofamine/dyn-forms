@@ -1,7 +1,7 @@
 import { FormGroup } from '@angular/forms';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
-import { Models } from '../../../../models';
+import { FormFieldJSON } from '../../../../models';
 
 @Component({
   selector: 'app-checkbox',
@@ -10,7 +10,7 @@ import { Models } from '../../../../models';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CheckboxComponent {
-  @Input() model: Models;
+  @Input() model: FormFieldJSON;
   @Input() control: FormGroup;
 
   constructor() { }

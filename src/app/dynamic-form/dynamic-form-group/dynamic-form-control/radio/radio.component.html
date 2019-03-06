@@ -1,7 +1,6 @@
-<mat-radio-group [formGroup]="control" class="radio">
+<mat-radio-group [formControl]="control" class="radio">
   <mat-radio-button
     *ngFor="let option of model.options"
-    [formControl]="getControl(option.value)"
     [value]="option.value"
     ngDefaultControl>{{option.value}}</mat-radio-button>
 </mat-radio-group>

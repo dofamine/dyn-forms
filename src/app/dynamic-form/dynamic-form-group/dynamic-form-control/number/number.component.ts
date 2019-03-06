@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
-import { Models } from '../../../../models';
+import { FormFieldJSON } from '../../../../models';
 
 @Component({
   selector: 'app-number',
@@ -9,7 +9,7 @@ import { Models } from '../../../../models';
   styleUrls: ['./number.component.scss']
 })
 export class NumberComponent {
-  @Input() model: Models;
+  @Input() model: FormFieldJSON;
   @Input() control: FormControl;
 
   constructor() { }

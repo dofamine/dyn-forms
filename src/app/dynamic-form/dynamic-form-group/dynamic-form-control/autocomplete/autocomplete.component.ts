@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
-import { Models, Option } from '../../../../models';
+import { FormFieldJSON, Option } from '../../../../models';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -10,7 +10,7 @@ import { FormControl } from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AutocompleteComponent {
-  @Input() model: Models;
+  @Input() model: FormFieldJSON;
   @Input() control: FormControl;
 
   constructor() {
