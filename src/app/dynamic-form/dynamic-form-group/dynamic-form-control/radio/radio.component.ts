@@ -10,7 +10,7 @@ import { FormFieldJSON } from '../../../../models';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RadioComponent {
-  @Input() model: FormFieldJSON;
+  @Input() formFieldJSON: FormFieldJSON;
   @Input() control: FormGroup;
 
   constructor() { }

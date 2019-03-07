@@ -1,5 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import {
+  MatAutocompleteModule,
+  MatCheckboxModule,
+  MatDatepickerModule,
+  MatFormFieldModule, MatIconModule,
+  MatInputModule,
+  MatNativeDateModule, MatRadioModule, MatSelectModule
+} from '@angular/material';
+
 import { DynamicFormComponent } from './dynamic-form.component';
 import { DynamicFormControlComponent } from './dynamic-form-group/dynamic-form-control/dynamic-form-control.component';
 import { AutocompleteComponent } from './dynamic-form-group/dynamic-form-control/autocomplete/autocomplete.component';
@@ -10,16 +21,6 @@ import { SelectComponent } from './dynamic-form-group/dynamic-form-control/selec
 import { DateComponent } from './dynamic-form-group/dynamic-form-control/date/date.component';
 import { NumberComponent } from './dynamic-form-group/dynamic-form-control/number/number.component';
 import { DynamicFormGroupComponent } from './dynamic-form-group/dynamic-form-group.component';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {
-  MatAutocompleteModule,
-  MatCheckboxModule,
-  MatDatepickerModule,
-  MatFormFieldModule, MatIconModule,
-  MatInputModule,
-  MatNativeDateModule, MatRadioModule, MatSelectModule
-} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormService } from './form.service';
 
@@ -57,7 +58,7 @@ const COMPONENTS = [
   declarations: COMPONENTS,
   imports: MODULES,
   exports: [...COMPONENTS, ...MODULES],
-  providers: [ FormService ]
+  providers: [FormService]
 })
 export class DynamicFormModule {
 }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { FormFieldJSON, FormModel } from '../models';
 
+import { FormFieldJSON, FormModel } from '../models';
 
 @Injectable()
 export class FormService {

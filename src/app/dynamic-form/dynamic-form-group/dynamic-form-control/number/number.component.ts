@@ -9,7 +9,7 @@ import { FormFieldJSON } from '../../../../models';
   styleUrls: ['./number.component.scss']
 })
 export class NumberComponent {
-  @Input() model: FormFieldJSON;
+  @Input() formFieldJSON: FormFieldJSON;
   @Input() control: FormControl;
 
   constructor() { }

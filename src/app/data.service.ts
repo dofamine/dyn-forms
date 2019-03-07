@@ -1,23 +1,24 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+
 import { FormFieldJSON } from './models';
 
 export const formData = [
   {
-    title: 'text title',
-    id: 'somdsfdseid',
+    title: 'text field',
+    id: 'text1',
     groupName: 'group3',
     seqNo: 1,
     type: 'text',
   }, {
     title: 'USD',
-    id: 'fdsfdsfsce',
+    id: 'number1',
     groupName: 'group1',
     seqNo: 2,
     type: 'number',
   }, {
     title: 'City',
-    id: 'tgfdvtrsvdf',
+    id: 'select1',
     groupName: 'group1',
     seqNo: 8,
     type: 'select',
@@ -41,13 +42,13 @@ export const formData = [
     ]
   }, {
     title: 'write smthng here',
-    id: 'gtgfdvtwrvdf',
+    id: 'text2',
     groupName: 'group2',
     seqNo: 1,
     type: 'text',
   }, {
     title: 'Bank',
-    id: 'gfdsbertbfdg',
+    id: 'radio1',
     groupName: 'group2',
     seqNo: 4,
     type: 'radio',
@@ -62,19 +63,19 @@ export const formData = [
     ],
   }, {
     title: 'Delivery Date',
-    id: 'gsfdbtrgfgdtresdtg',
+    id: 'date1',
     groupName: 'group6',
     seqNo: 56,
     type: 'date',
   }, {
     title: 'Days',
-    id: 'gfdsgtr',
-    groupName: 'group5',
+    id: 'number2',
+    groupName: 'group6',
     seqNo: 6,
     type: 'number',
   }, {
     title: 'Search1',
-    id: 'gfdbrtdfgsergft',
+    id: 'autocomplete1',
     groupName: 'group3',
     seqNo: 43,
     type: 'autocomplete',
@@ -95,13 +96,13 @@ export const formData = [
     ]
   }, {
     title: 'provide info',
-    id: 'gfdbtrbfddy',
+    id: 'text3',
     groupName: 'group2',
     seqNo: 3,
     type: 'text',
   }, {
     title: 'Search1',
-    id: 'gtvgfxbfx',
+    id: 'autocomplete2',
     groupName: 'group2',
     seqNo: 45,
     type: 'autocomplete',
@@ -116,7 +117,7 @@ export const formData = [
     ]
   }, {
     title: 'Radio',
-    id: 'hfdhtfhgfjhnlk',
+    id: 'radio2',
     groupName: 'group6',
     seqNo: 56,
     type: 'radio',
@@ -132,28 +133,28 @@ export const formData = [
   },
   {
     title: 'check box3',
-    id: 'hgjnmfumhj',
+    id: 'checkbox1',
     groupName: 'group1',
     seqNo: 8,
     type: 'checkbox',
   },
   {
     title: 'check box2',
-    id: 'dsdsads',
-    groupName: 'group5',
+    id: 'checkbox2',
+    groupName: 'group6',
     seqNo: 65,
     type: 'checkbox',
   },
   {
     title: 'check box1',
-    id: 'dsafsad',
-    groupName: 'group5',
+    id: 'checkbox3',
+    groupName: 'group6',
     seqNo: 635,
     type: 'checkbox',
   }, {
     title: 'some select',
-    id: 'mjhkhgyghjnfuy',
-    groupName: 'group9',
+    id: 'select2',
+    groupName: 'group6',
     seqNo: 5,
     type: 'select',
     options: [

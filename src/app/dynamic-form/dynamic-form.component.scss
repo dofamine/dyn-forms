@@ -1,3 +1,14 @@
 .group {
   margin: 20px;
 }
+button {
+  margin: 20px;
+  padding: 15px 30px;
+  background: #4eb1ff;
+  border: none;
+
+  &:hover{
+    cursor: pointer;
+    outline: 3px solid #369;
+  }
+}

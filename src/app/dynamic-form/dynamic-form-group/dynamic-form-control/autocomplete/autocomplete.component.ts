@@ -10,17 +10,17 @@ import { FormControl } from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AutocompleteComponent {
-  @Input() model: FormFieldJSON;
+  @Input() formFieldJSON: FormFieldJSON;
   @Input() control: FormControl;
 
   constructor() {
   }
 
   get title(): string {
-    return this.model.title;
+    return this.formFieldJSON.title;
   }
 
   get options(): Option[] {
-    return this.model.options;
+    return this.formFieldJSON.options;
   }
 }

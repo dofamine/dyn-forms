@@ -9,7 +9,7 @@ import { FormFieldJSON } from '../../../../models';
   styleUrls: ['./text.component.scss']
 })
 export class TextComponent {
-  @Input() model: FormFieldJSON;
+  @Input() formFieldJSON: FormFieldJSON;
   @Input() control: FormControl;
 
   constructor() {

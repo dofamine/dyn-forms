@@ -1,6 +1,6 @@
 <mat-radio-group [formControl]="control" class="radio">
   <mat-radio-button
-    *ngFor="let option of model.options"
+    *ngFor="let option of formFieldJSON.options"
     [value]="option.value"
     ngDefaultControl>{{option.value}}</mat-radio-button>
 </mat-radio-group>

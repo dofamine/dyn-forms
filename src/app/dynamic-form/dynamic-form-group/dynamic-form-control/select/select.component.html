@@ -1,10 +1,10 @@
 <mat-form-field>
   <select matNativeControl
           [formControl]="control"
-          [placeholder]="model.title"
+          [placeholder]="formFieldJSON.title"
           name="car">
     <option value="" selected></option>
-    <option *ngFor="let option of model.options" [value]="option.key">
+    <option *ngFor="let option of formFieldJSON.options" [value]="option.key">
       {{option.value}}
     </option>
   </select>

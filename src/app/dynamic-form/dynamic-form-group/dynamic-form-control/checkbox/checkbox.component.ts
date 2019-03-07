@@ -10,12 +10,8 @@ import { FormFieldJSON } from '../../../../models';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CheckboxComponent {
-  @Input() model: FormFieldJSON;
+  @Input() formFieldJSON: FormFieldJSON;
   @Input() control: FormGroup;
 
   constructor() { }
-
-  getControl(name: string | number) {
-    return this.control.controls[name];
-  }
 }
